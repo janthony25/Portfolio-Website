@@ -8,191 +8,107 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style>
-      .carousel-container {
-        position: relative;
-      }
-
-      .tech-stack-container {
-        position: relative;
-        max-width: 600px;
-        margin: 0 auto;
-        overflow: hidden;
-      }
-
-      .tech-stack-scroll {
-        display: flex;
-        transition: transform 0.3s ease;
-      }
-
-      .tech-item {
-        flex: 0 0 100px;
-        text-align: center;
-        padding: 0 10px;
-      }
-
-      .tech-icon {
-        width: 80px;
-        height: 80px;
-        border: 2px solid #dee2e6;
-        border-radius: 50%;
-        overflow: hidden;
-        margin: 0 auto 10px;
-      }
-
-      /* Button styling */
-      .nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(255, 255, 255, 0.7);
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        color: #333;
-        z-index: 1000 !important;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      }
-
-      .nav-button:hover {
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-
-      /* Positioning the buttons outside the carousel */
-      .button-container {
-        position: absolute;
-        top: 30%;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .button-container .prev {
-        position: absolute;
-        left: 20%;
-      }
-
-      .button-container .next {
-        position: absolute;
-        right: 20%;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container my-5">
       <h2 class="text-center mb-4">Tech Stacks</h2>
-      <div class="carousel-container">
-        <div class="tech-stack-container">
-          <div class="tech-stack-scroll">
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img src="/photos/c-sharp.png" alt="C#" class="img-fluid" />
-              </div>
-              <p>C#</p>
+      <div class="tech-stack-container">
+        <div class="tech-stack-scroll">
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img src="/photos/c-sharp.png" alt="C#" class="img-fluid" />
             </div>
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img
-                  src="/photos/programing.png"
-                  alt="Angular"
-                  class="img-fluid"
-                />
-              </div>
-              <p>Angular</p>
+            <p>C#</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img src="/photos//net-core.png" alt="React" class="img-fluid" />
             </div>
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img src="/photos/html.png" alt="HTML" class="img-fluid" />
-              </div>
-              <p>HTML</p>
+            <p>.Net Core</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img
+                src="/photos/programing.png"
+                alt="Angular"
+                class="img-fluid"
+              />
             </div>
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img src="/photos/css-3.png" alt="CSS" class="img-fluid" />
-              </div>
-              <p>CSS</p>
+            <p>Angular</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img src="/photos/html.png" alt="HTML" class="img-fluid" />
             </div>
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img
-                  src="/photos/java-script.png"
-                  alt="JavaScript"
-                  class="img-fluid"
-                />
-              </div>
-              <p>JavaScript</p>
+            <p>HTML</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img src="/photos/css-3.png" alt="CSS" class="img-fluid" />
             </div>
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img
-                  src="/photos//bootstrap.png"
-                  alt="Bootstrap"
-                  class="img-fluid"
-                />
-              </div>
-              <p>Bootstrap</p>
+            <p>CSS</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img
+                src="/photos/java-script.png"
+                alt="JavaScript"
+                class="img-fluid"
+              />
             </div>
-            <div class="tech-item">
-              <div class="tech-icon">
-                <img
-                  src="/photos//sql-server.png"
-                  alt="React"
-                  class="img-fluid"
-                />
-              </div>
-              <p>React</p>
+            <p>JavaScript</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img
+                src="/photos//bootstrap.png"
+                alt="Bootstrap"
+                class="img-fluid"
+              />
             </div>
+            <p>Bootstrap</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img
+                src="/photos//sql-server.png"
+                alt="React"
+                class="img-fluid"
+              />
+            </div>
+            <p>MSSQL</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img
+                src="/photos//sql-server.png"
+                alt="React"
+                class="img-fluid"
+              />
+            </div>
+            <p>React</p>
+          </div>
+          <div class="tech-item">
+            <div class="tech-icon">
+              <img
+                src="/photos//sql-server.png"
+                alt="React"
+                class="img-fluid"
+              />
+            </div>
+            <p>React</p>
           </div>
         </div>
+      </div>
 
-        <!-- Buttons positioned outside the carousel container -->
-        <div class="button-container">
-          <button class="nav-button prev">&lt;</button>
-          <button class="nav-button next">&gt;</button>
-        </div>
+      <!-- Buttons positioned outside the carousel container -->
+      <div class="button-container">
+        <button class="nav-button prev">&lt;</button>
+        <button class="nav-button next">&gt;</button>
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const scroll = document.querySelector(".tech-stack-scroll");
-        const prevBtn = document.querySelector(".nav-button.prev");
-        const nextBtn = document.querySelector(".nav-button.next");
-        const itemWidth = 100;
-        const visibleItems = 6;
-        let currentIndex = 0;
-
-        function updateCarousel() {
-          scroll.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
-          prevBtn.style.display = currentIndex > 0 ? "flex" : "none";
-          nextBtn.style.display =
-            currentIndex < scroll.children.length - visibleItems
-              ? "flex"
-              : "none";
-        }
-
-        prevBtn.addEventListener("click", () => {
-          if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-          }
-        });
-
-        nextBtn.addEventListener("click", () => {
-          if (currentIndex < scroll.children.length - visibleItems) {
-            currentIndex++;
-            updateCarousel();
-          }
-        });
-
-        updateCarousel();
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

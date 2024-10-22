@@ -1,3 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+p, 
+h3{
+    margin: 0;
+    color: #333333;
+}
+
+.header-container{
+    position: relative;
+}
+
+.profile-photo-container img {
+    height: 200px;
+}
+
+.social-media-item{
+    border-radius: 25px;
+    box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.17);
+    width: 140px;
+    padding: 4px;
+}
+
+.social-media-item img{
+    height: 25px; 
+    width: 25px;
+}
+
+hr{
+    width: 700px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 .carousel-container {}
 
@@ -6,6 +44,7 @@
   max-width: 600px;
   margin: 0 auto;
   overflow: hidden;
+  cursor: grab;
   user-select: none; /* Prevent text selection inside */
 }
 
@@ -21,8 +60,8 @@
 }
 
 .tech-icon {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border: 2px solid #dee2e6;
   border-radius: 50%;
   overflow: hidden;

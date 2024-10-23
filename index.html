@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body style="margin-bottom: 200px;">
+
+    <button id="darkModeToggle" style="position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px; border-radius: 50%; border: none; cursor: pointer; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+        <img src="/photos/moon.png" alt="Dark Mode" style="width: 20px; height: 20px;" id="darkModeIcon">
+    </button>
+
     <div class="container-fluid header-container d-flex flex-column justify-content-center my-5">
         <div class="profile-container justify-content-center d-flex">
             <div class="profile">
@@ -132,11 +137,13 @@
 
         <div class="projects-container">
             <h5 class="fw-bold mb-5">PROJECTS</h5>
+            
+            <!-- First Project (Left Sliding) -->
             <div class="project-container">
                 <div class="container-fluid">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <div class="gallery-container" id="gallery1">
+                            <div class="gallery-container slide-left" id="gallery1">
                                 <div class="photo-card">
                                     <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
                                 </div>
@@ -166,76 +173,74 @@
                                         <span class="tech-tag">BOOTSTRAP</span>
                                         <span class="tech-tag">MSSQL</span>
                                         <div class="reactions-container d-flex mt-4 ms-4">
-                                          <div class="likes-container d-flex align-items-center justify-content-center">
-                                              <img src="/photos/heart.png" alt="" style="height: 25px; width: 25px;"> 
-                                              <span class="ms-3" style="font-size: 20px;">3</span>
-                                          </div>
-                                          <div class="likes-container d-flex align-items-center justify-content-center ms-5">
-                                              <img src="/photos/chat.png" alt="" style="height: 25px; width: 25px;">
-                                              <span class="ms-3" style="font-size: 20px;">4</span>
-                                          </div>
-                                      </div>
+                                            <div class="likes-container d-flex align-items-center justify-content-center">
+                                                <img src="/photos/heart.png" alt="" style="height: 25px; width: 25px;"> 
+                                                <span class="ms-3" style="font-size: 20px;">3</span>
+                                            </div>
+                                            <div class="likes-container d-flex align-items-center justify-content-center ms-5">
+                                                <img src="/photos/chat.png" alt="" style="height: 25px; width: 25px;">
+                                                <span class="ms-3" style="font-size: 20px;">4</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
 
+            <!-- Second Project (Right Sliding) -->
             <div class="project-container mt-5">
-              <div class="container-fluid">
-                  <div class="row align-items-center">
-                      
-                      <div class="col-lg-6">
-                          <div class="project-details">
-                              <h1 class="project-title">Mobile Mechanic Invoice System</h1>
-                              <div class="project-description">
-                                  <p>Mobile Mekaniko is a comprehensive Automotive Service Management System designed to streamline the operations of automotive service providers. The system offers end-to-end management of customer relationships, vehicle services, invoicing, and quotations in a secure, multi-user environment.</p>
-                              </div>
-                              <div class="tech-stack">
-                                  <h3 class="mb-3">Technologies Used</h3>
-                                  <div class="tech-tags">
-                                      <span class="tech-tag">C#</span>
-                                      <span class="tech-tag">.Net Core</span>
-                                      <span class="tech-tag">MVC</span>
-                                      <span class="tech-tag">HTML</span>
-                                      <span class="tech-tag">CSS</span>
-                                      <span class="tech-tag">JS</span>
-                                      <span class="tech-tag">BOOTSTRAP</span>
-                                      <span class="tech-tag">MSSQL</span>
-                                      <div class="reactions-container d-flex mt-4 ms-4">
-                                        <div class="likes-container d-flex align-items-center justify-content-center">
-                                            <img src="/photos/heart.png" alt="" style="height: 25px; width: 25px;"> 
-                                            <span class="ms-3" style="font-size: 20px;">3</span>
-                                        </div>
-                                        <div class="likes-container d-flex align-items-center justify-content-center ms-5">
-                                            <img src="/photos/chat.png" alt="" style="height: 25px; width: 25px;">
-                                            <span class="ms-3" style="font-size: 20px;">4</span>
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="project-details">
+                                <h1 class="project-title">Mobile Mechanic Invoice System</h1>
+                                <div class="project-description">
+                                    <p>Mobile Mekaniko is a comprehensive Automotive Service Management System designed to streamline the operations of automotive service providers. The system offers end-to-end management of customer relationships, vehicle services, invoicing, and quotations in a secure, multi-user environment.</p>
+                                </div>
+                                <div class="tech-stack">
+                                    <h3 class="mb-3">Technologies Used</h3>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">C#</span>
+                                        <span class="tech-tag">.Net Core</span>
+                                        <span class="tech-tag">MVC</span>
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JS</span>
+                                        <span class="tech-tag">BOOTSTRAP</span>
+                                        <span class="tech-tag">MSSQL</span>
+                                        <div class="reactions-container d-flex mt-4 ms-4">
+                                            <div class="likes-container d-flex align-items-center justify-content-center">
+                                                <img src="/photos/heart.png" alt="" style="height: 25px; width: 25px;"> 
+                                                <span class="ms-3" style="font-size: 20px;">3</span>
+                                            </div>
+                                            <div class="likes-container d-flex align-items-center justify-content-center ms-5">
+                                                <img src="/photos/chat.png" alt="" style="height: 25px; width: 25px;">
+                                                <span class="ms-3" style="font-size: 20px;">4</span>
+                                            </div>
                                         </div>
                                     </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="gallery-container" id="gallery1">
-                            <div class="photo-card">
-                                <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
+                                </div>
                             </div>
-                            <div class="photo-card">
-                                <img src="/photos/MMFullstack-photo/dashboard1-better.png" alt="Project screenshot 2">
-                            </div>
-                            <div class="photo-card">
-                                <img src="/photos/MMFullstack-photo/invoice.png" alt="Project screenshot 3">
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="gallery-container slide-right" id="gallery2">
+                                <div class="photo-card">
+                                    <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
+                                </div>
+                                <div class="photo-card">
+                                    <img src="/photos/MMFullstack-photo/dashboard1-better.png" alt="Project screenshot 2">
+                                </div>
+                                <div class="photo-card">
+                                    <img src="/photos/MMFullstack-photo/invoice.png" alt="Project screenshot 3">
+                                </div>
                             </div>
                         </div>
                     </div>
-                  </div>
-                  
-              </div>
-          </div>
+                </div>
+            </div>
             
         </div>
     </div>

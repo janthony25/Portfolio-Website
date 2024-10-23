@@ -1,50 +1,51 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.hr-container{
-  max-width: 620px;
+.hr-container {
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
-p, 
-h3{
-    margin: 0;
-    color: #333333;
+p, h3 {
+  margin: 0;
+  color: #333333;
 }
 
-.header-container{
-    position: relative;
+.header-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .profile-photo-container img {
-    height: 200px;
+  height: 200px;
 }
 
-.social-media-item{
-    border-radius: 25px;
-    box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.17);
-    width: 120px;
-    height: 24px;
-    padding: 4px;
+.social-media-item {
+  border-radius: 25px;
+  box-shadow: 4px 6px 7px rgba(0, 0, 0, 0.17);
+  width: 120px;
+  height: 24px;
+  padding: 4px;
 }
 
-.social-media-item img{
-    height: 18px; 
-    width: 18px;
+.social-media-item img {
+  height: 18px; 
+  width: 18px;
 }
-
-
-.carousel-container {}
 
 .tech-stack-container {
   position: relative;
-  max-width: 600px;
+  max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
   cursor: grab;
-  user-select: none; /* Prevent text selection inside */
+  user-select: none;
+  padding: 0 15px;
 }
 
 .tech-stack-scroll {
@@ -67,7 +68,6 @@ h3{
   margin: 0 auto 10px;
 }
 
-/* Button styling */
 .nav-button {
   position: absolute;
   top: 50%;
@@ -82,7 +82,7 @@ h3{
   align-items: center;
   font-size: 1.5rem;
   color: #333;
-  z-index: 1000 !important;
+  z-index: 1000;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
@@ -91,7 +91,6 @@ h3{
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-/* Positioning the buttons outside the carousel */
 .button-container {
   position: relative;
   top: -85px;
@@ -102,88 +101,195 @@ h3{
 
 .button-container .prev {
   position: absolute;
-  left: 310px;
+  left: 300px;
 }
 
 .button-container .next {
   position: absolute;
-  right: 310px;
+  right: 300px;
 }
 
+.carousel-container {}
 
-/*---------------------- TECH STACK ----------------------------*/
-.about-me-container{
-  max-width: 620px;
-}
-
-/*-------------------------------------------------------------*/
-
-
-/*---------------------- ABOUT ME ----------------------------*/
-.about-me-container{
-  max-width: 620px;
-}
-
-/*-------------------------------------------------------------*/
-
-/* Update the projects container */
-.projects-container {
-  max-width: 620px;
+.about-me-container {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 15px; /* Add same padding as Bootstrap container */
-}
-
-.carousel-container {
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-/* Increase the padding-bottom value to make it taller */
-.carousel-inner {
-  position: relative;
-  padding-bottom: 75%; /* Increased from 56.25% to 75% for a taller carousel */
-  height: 0;
-  overflow: hidden;
-}
-
-.carousel-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Your existing styles */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-}
-
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  background-color: rgba(0, 0, 0, 1);
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  filter: brightness(50%);
-  width: auto;
   padding: 0 15px;
 }
 
-.carousel-control-prev span,
-.carousel-control-next span {
-  font-size: 1.5rem;
-  color: white;
+.projects-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
+.project-container {
+  min-height: 600px;
+  padding: 2rem;
+  background: #f8f9fa;
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.photo-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: center center;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background: white;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.photo-card:nth-child(1) {
+  transform: translate(0, 0) rotate(0deg);
+  z-index: 5;
+}
+
+.photo-card:nth-child(2) {
+  transform: translate(8px, 8px) rotate(-2deg);
+  z-index: 4;
+}
+
+.photo-card:nth-child(3) {
+  transform: translate(16px, 16px) rotate(-4deg);
+  z-index: 3;
+}
+
+.photo-card:nth-child(4) {
+  transform: translate(24px, 24px) rotate(-6deg);
+  z-index: 2;
+}
+
+.slide-out {
+  transform: translateX(-150%) rotate(-30deg) !important;
+  opacity: 0;
+}
+
+.moving-up {
+  transform: translate(0, 0) rotate(0deg) !important;
+  z-index: 5;
+}
+
+.project-details {
+  padding: 2rem;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.tech-stack {
+  margin-top: 2rem;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background: #e2e8f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #4a5568;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: #cbd5e0;
+  transform: translateY(-2px);
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: #718096;
+  opacity: 0.8;
+}
+
+@media (max-width: 1400px) {
+  .button-container .prev {
+      left: 50px;
+  }
+
+  .button-container .next {
+      right: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container .prev {
+      left: 10px;
+  }
+
+  .button-container .next {
+      right: 10px;
+  }
+
+  .project-container {
+      padding: 1rem;
+  }
+
+  .project-title {
+      font-size: 2rem;
+  }
+
+  .profile-photo-container img {
+      height: 150px;
+  }
+
+  .social-media-item {
+      width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .tech-stack-container {
+      max-width: 100%;
+  }
+
+  .profile-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile-right {
+      align-items: center !important;
+      margin-left: 0 !important;
+  }
+
+  .social-media {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .social-media-item {
+      margin: 5px !important;
+  }
+}

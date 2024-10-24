@@ -4,184 +4,148 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
-<body style="margin-bottom: 200px;">
-
-    <button id="darkModeToggle" style="position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px; border-radius: 50%; border: none; cursor: pointer; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-        <img src="/photos/moon.png" alt="Dark Mode" style="width: 20px; height: 20px;" id="darkModeIcon">
-    </button>
-
-    <div class="container-fluid header-container d-flex flex-column justify-content-center my-5">
-        <div class="profile-container justify-content-center d-flex">
-            <div class="profile">
-                <div class="profile-photo-container d-flex flex-column align-items-center">
-                    <img src="/photos/boy.png" alt="" class="img-fluid" />
+<body>
+    <!-- Header Section -->
+    <div class="header-container">
+        <div class="profile-container">
+            <div class="profile-photo-container">
+                <img src="/photos/boy.png" alt="Profile Photo" />
+            </div>
+            <div class="profile-details">
+                <h3>Jun Anthony Calupcupan</h3>
+                <p class="text-center">FULL STACK SOFTWARE ENGINEER</p>
+            </div>
+            <div class="social-media">
+                <div class="social-media-item">
+                    <img src="/photos/github.png" alt="Github" />
+                    <p>Github</p>
+                </div>
+                <div class="social-media-item">
+                    <img src="/photos/linkedin.png" alt="LinkedIn" />
+                    <p>LinkedIn</p>
+                </div>
+                <div class="social-media-item">
+                    <img src="/photos/tiktok.png" alt="TikTok" />
+                    <p>TikTok</p>
+                </div>
+                <div class="social-media-item">
+                    <img src="/photos/youtube.png" alt="Youtube" />
+                    <p>Youtube</p>
+                </div>
+                <div class="social-media-item">
+                    <img src="/photos/facebook.png" alt="Facebook" />
+                    <p>Facebook</p>
                 </div>
             </div>
-            
-            <div class="profile-right d-flex flex-column align-items-start ms-3">
-                <div class="profile-details mt-4 mb-4">
-                    <h3>Jun Anthony Calupcupan</h3>
-                    <p class="fw-bold">FULL STACK SOFTWARE ENGINEER</p>
-                </div>
-                <div class="d-flex flex-column">
-                    <div class="social-media d-flex justify-content-start align-items-center mb-2">
-                        <div class="social-media-item d-flex justify-content-center align-items-center">
-                            <img src="/photos/github.png" alt="Github" class="img-fluid" />
-                            <p class="fw-bold ms-3 mb-0">Github</p>
-                        </div>
-                        <div class="social-media-item d-flex justify-content-center align-items-center ms-2">
-                            <img src="/photos/linkedin.png" alt="LinkedIn" class="img-fluid" />
-                            <p class="fw-bold ms-3 mb-0">LinkedIn</p>
-                        </div>
-                        <div class="social-media-item d-flex justify-content-center align-items-center ms-2">
-                            <img src="/photos/tiktok.png" alt="TikTok" class="img-fluid" />
-                            <p class="fw-bold ms-3 mb-0">TikTok</p>
-                        </div>
-                    </div>
-                    <div class="social-media d-flex justify-content-start align-items-center">
-                        <div class="social-media-item d-flex justify-content-center align-items-center">
-                            <img src="/photos/youtube.png" alt="Youtube" class="img-fluid" />
-                            <p class="fw-bold ms-3 mb-0">Youtube</p>
-                        </div>
-                        <div class="social-media-item d-flex justify-content-center align-items-center ms-2">
-                            <img src="/photos/facebook.png" alt="Facebook" class="img-fluid" />
-                            <p class="fw-bold ms-3 mb-0">Facebook</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tech-stack-container mt-5">
-            <h5 class="fw-bold mb-4">TECH STACKS</h5>
-            <div class="tech-stack-scroll">
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/c-sharp.png" alt="C#" class="img-fluid" />
-                    </div>
-                    <p>C#</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/net-core.png" alt=".Net Core" class="img-fluid" />
-                    </div>
-                    <p>.Net Core</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/programing.png" alt="Angular" class="img-fluid" />
-                    </div>
-                    <p>Angular</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/html.png" alt="HTML" class="img-fluid" />
-                    </div>
-                    <p>HTML</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/css-3.png" alt="CSS" class="img-fluid" />
-                    </div>
-                    <p>CSS</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/java-script.png" alt="JavaScript" class="img-fluid" />
-                    </div>
-                    <p>JavaScript</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/bootstrap.png" alt="Bootstrap" class="img-fluid" />
-                    </div>
-                    <p>Bootstrap</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/sql-server.png" alt="MSSQL" class="img-fluid" />
-                    </div>
-                    <p>MSSQL</p>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">
-                        <img src="/photos/react.png" alt="React" class="img-fluid" />
-                    </div>
-                    <p>React</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="button-container text-center mt-3">
-            <button class="nav-button prev">&lt;</button>
-            <button class="nav-button next">&gt;</button>
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="hr-container">
-            <hr>
+    <!-- Tech Stack Section -->
+    <div class="tech-stack-container">
+        <h5>TECH STACKS</h5>
+        <div class="tech-stack-grid">
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/c-sharp.png" alt="C#" />
+                </div>
+                <p>C#</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/net-core.png" alt=".Net Core" />
+                </div>
+                <p>.Net Core</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/programing.png" alt="Angular" />
+                </div>
+                <p>Angular</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/html.png" alt="HTML" />
+                </div>
+                <p>HTML</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/css-3.png" alt="CSS" />
+                </div>
+                <p>CSS</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/java-script.png" alt="JavaScript" />
+                </div>
+                <p>JavaScript</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/bootstrap.png" alt="Bootstrap" />
+                </div>
+                <p>Bootstrap</p>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">
+                    <img src="/photos/sql-server.png" alt="MSSQL" />
+                </div>
+                <p>MSSQL</p>
+            </div>
         </div>
+    </div>
 
-        <div class="about-me-container mt-5">
-            <h5 class="fw-bold">ABOUT ME</h5>
-            <p>Full-stack developer skilled in .NET Core and MVC. Built web apps using Entity Framework Core, RESTful APIs, JQuery and Angular. Focused on writing clean, effective code for real-world projects.</p>
-        </div>
+    <div class="hr-container">
+        <hr>
+    </div>
 
-        <div class="hr-container mt-5">
-            <hr>
-        </div>
-
-        <div class="projects-container">
-            <h5 class="fw-bold mb-5">PROJECTS</h5>
-            
-            <!-- First Project (Left Sliding) -->
-            <div class="project-container">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="gallery-container slide-left" id="gallery1">
-                                <div class="photo-card">
-                                    <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
-                                </div>
-                                <div class="photo-card">
-                                    <img src="/photos/MMFullstack-photo/dashboard1-better.png" alt="Project screenshot 2">
-                                </div>
-                                <div class="photo-card">
-                                    <img src="/photos/MMFullstack-photo/invoice.png" alt="Project screenshot 3">
-                                </div>
+    <!-- Projects Section -->
+    <div class="projects-container">
+        <h5>PROJECTS</h5>
+        
+        <!-- First Project (Left Sliding) -->
+        <div class="project-container">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="gallery-container slide-left" id="gallery1">
+                            <div class="photo-card">
+                                <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
+                            </div>
+                            <div class="photo-card">
+                                <img src="/photos/MMFullstack-photo/dashboard1-better.png" alt="Project screenshot 2">
+                            </div>
+                            <div class="photo-card">
+                                <img src="/photos/MMFullstack-photo/invoice.png" alt="Project screenshot 3">
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="project-details">
-                                <h1 class="project-title">Mobile Mechanic Invoice System</h1>
-                                <div class="project-description">
-                                    <p>Mobile Mekaniko is a comprehensive Automotive Service Management System designed to streamline the operations of automotive service providers. The system offers end-to-end management of customer relationships, vehicle services, invoicing, and quotations in a secure, multi-user environment.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-details">
+                            <h1 class="project-title">Mobile Mechanic Invoice System</h1>
+                            <div class="project-description">
+                                <p>Mobile Mekaniko is a comprehensive Automotive Service Management System designed to streamline the operations of automotive service providers. The system offers end-to-end management of customer relationships, vehicle services, invoicing, and quotations in a secure, multi-user environment.</p>
+                            </div>
+                            <div class="tech-stack">
+                                <h3>Technologies Used</h3>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">.Net Core</span>
+                                    <span class="tech-tag">MVC</span>
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JS</span>
+                                    <span class="tech-tag">BOOTSTRAP</span>
+                                    <span class="tech-tag">MSSQL</span>
                                 </div>
-                                <div class="tech-stack">
-                                    <h3 class="mb-3">Technologies Used</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">C#</span>
-                                        <span class="tech-tag">.Net Core</span>
-                                        <span class="tech-tag">MVC</span>
-                                        <span class="tech-tag">HTML</span>
-                                        <span class="tech-tag">CSS</span>
-                                        <span class="tech-tag">JS</span>
-                                        <span class="tech-tag">BOOTSTRAP</span>
-                                        <span class="tech-tag">MSSQL</span>
-                                        <div class="reactions-container d-flex mt-4 ms-4">
-                                            <div class="likes-container d-flex align-items-center justify-content-center">
-                                                <img src="/photos/heart.png" alt="" style="height: 25px; width: 25px;"> 
-                                                <span class="ms-3" style="font-size: 20px;">3</span>
-                                            </div>
-                                            <div class="likes-container d-flex align-items-center justify-content-center ms-5">
-                                                <img src="/photos/chat.png" alt="" style="height: 25px; width: 25px;">
-                                                <span class="ms-3" style="font-size: 20px;">4</span>
-                                            </div>
-                                        </div>
+                                <div class="reactions-container">
+                                    <div class="likes-container">
+                                        <img src="/photos/heart.png" alt=""> 
+                                        <span>3</span>
                                     </div>
                                 </div>
                             </div>
@@ -189,59 +153,54 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Second Project (Right Sliding) -->
-            <div class="project-container mt-5">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="project-details">
-                                <h1 class="project-title">Mobile Mechanic Invoice System</h1>
-                                <div class="project-description">
-                                    <p>Mobile Mekaniko is a comprehensive Automotive Service Management System designed to streamline the operations of automotive service providers. The system offers end-to-end management of customer relationships, vehicle services, invoicing, and quotations in a secure, multi-user environment.</p>
+        <!-- Second Project (Right Sliding) -->
+        <div class="project-container">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="project-details">
+                            <h1 class="project-title">Mobile Mechanic Invoice System</h1>
+                            <div class="project-description">
+                                <p>Mobile Mekaniko is a comprehensive Automotive Service Management System designed to streamline the operations of automotive service providers. The system offers end-to-end management of customer relationships, vehicle services, invoicing, and quotations in a secure, multi-user environment.</p>
+                            </div>
+                            <div class="tech-stack">
+                                <h3>Technologies Used</h3>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">.Net Core</span>
+                                    <span class="tech-tag">MVC</span>
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JS</span>
+                                    <span class="tech-tag">BOOTSTRAP</span>
+                                    <span class="tech-tag">MSSQL</span>
                                 </div>
-                                <div class="tech-stack">
-                                    <h3 class="mb-3">Technologies Used</h3>
-                                    <div class="tech-tags">
-                                        <span class="tech-tag">C#</span>
-                                        <span class="tech-tag">.Net Core</span>
-                                        <span class="tech-tag">MVC</span>
-                                        <span class="tech-tag">HTML</span>
-                                        <span class="tech-tag">CSS</span>
-                                        <span class="tech-tag">JS</span>
-                                        <span class="tech-tag">BOOTSTRAP</span>
-                                        <span class="tech-tag">MSSQL</span>
-                                        <div class="reactions-container d-flex mt-4 ms-4">
-                                            <div class="likes-container d-flex align-items-center justify-content-center">
-                                                <img src="/photos/heart.png" alt="" style="height: 25px; width: 25px;"> 
-                                                <span class="ms-3" style="font-size: 20px;">3</span>
-                                            </div>
-                                            <div class="likes-container d-flex align-items-center justify-content-center ms-5">
-                                                <img src="/photos/chat.png" alt="" style="height: 25px; width: 25px;">
-                                                <span class="ms-3" style="font-size: 20px;">4</span>
-                                            </div>
-                                        </div>
+                                <div class="reactions-container">
+                                    <div class="likes-container">
+                                        <img src="/photos/heart.png" alt=""> 
+                                        <span>3</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="gallery-container slide-right" id="gallery2">
-                                <div class="photo-card">
-                                    <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
-                                </div>
-                                <div class="photo-card">
-                                    <img src="/photos/MMFullstack-photo/dashboard1-better.png" alt="Project screenshot 2">
-                                </div>
-                                <div class="photo-card">
-                                    <img src="/photos/MMFullstack-photo/invoice.png" alt="Project screenshot 3">
-                                </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="gallery-container slide-right" id="gallery2">
+                            <div class="photo-card">
+                                <img src="/photos/MMFullstack-photo/login.png" alt="Project screenshot 1">
+                            </div>
+                            <div class="photo-card">
+                                <img src="/photos/MMFullstack-photo/dashboard1-better.png" alt="Project screenshot 2">
+                            </div>
+                            <div class="photo-card">
+                                <img src="/photos/MMFullstack-photo/invoice.png" alt="Project screenshot 3">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 

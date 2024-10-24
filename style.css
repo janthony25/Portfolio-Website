@@ -91,7 +91,8 @@ body {
   text-align: center;
 }
 
-.tech-stack-container h5 {
+.tech-stack-container h5,
+.projects-container h5 {
   font-size: 24px;
   font-weight: 600;
   color: #2D3748;

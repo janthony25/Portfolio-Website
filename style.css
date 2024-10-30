@@ -357,6 +357,7 @@ body {
   padding: 1.25rem;
   max-width: 500px;
   margin: 0 auto;
+  text-align: left;
 }
 
 .project-title {
@@ -364,6 +365,7 @@ body {
   font-weight: bold;
   margin-bottom: 0.6rem;
   color: #ffffff;
+  text-align: left;
 }
 
 .project-description {
@@ -371,22 +373,26 @@ body {
   line-height: 1.4;
   color: #e0e0e0;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .tech-stack {
   margin-top: 1rem;
+  text-align: left;
 }
 
 .tech-stack h3 {
   font-size: 1rem;
   margin-bottom: 0.6rem;
   color: #ffffff;
+  text-align: left;
 }
 
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  justify-content: flex-start;
 }
 
 .tech-tag {
@@ -409,6 +415,7 @@ body {
 .reactions-container {
   display: flex;
   margin-top: 16px;
+  justify-content: flex-start;
 }
 
 .likes-container {
@@ -433,7 +440,26 @@ body {
   color: #ffffff;
 }
 
-/* Responsive Design */
+/* Medium devices (tablets) */
+@media (max-width: 991px) {
+  .project-container {
+    padding: 30px;
+  }
+
+  .project-container .gallery-container {
+    margin: 40px auto;
+  }
+
+  .project-details {
+    margin-top: 30px;
+  }
+
+  .project-container:last-child {
+    margin-bottom: 30px;
+  }
+}
+
+/* Smaller devices (mobile) */
 @media (max-width: 768px) {
   .profile-photo-container {
     width: 140px;
@@ -467,10 +493,8 @@ body {
     margin: 4px;
   }
 
-  /* Updated Project Container Styles for Mobile */
   .project-container {
     padding: 20px;
-    margin-bottom: 30px;
   }
 
   .project-container .row {
@@ -481,10 +505,9 @@ body {
     width: 100%;
   }
 
-  /* Force gallery to top for ALL project containers */
   .project-container .gallery-container {
     order: -1 !important;
-    margin: 0 auto 24px;
+    margin: 30px auto;
     width: 100%;
     max-width: 280px;
     height: 175px;
@@ -498,7 +521,7 @@ body {
 
   .project-details {
     padding: 0 15px;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
   }
 
@@ -546,5 +569,91 @@ body {
 
   .photo-card {
     max-width: 240px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+
+  .tech-stack h3 {
+    font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .likes-container {
+    padding: 4px 10px;
+  }
+
+  .likes-container img {
+    height: 16px;
+    width: 16px;
+  }
+
+  .likes-container span {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .tech-stack-container h5,
+  .projects-container h5 {
+    font-size: 18px;
+  }
+}
+
+.about-content {
+  padding: 2rem;
+}
+
+.about-content h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.section p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.bordered {
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section li {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+      padding: 1.5rem;
   }
 }

@@ -14,7 +14,7 @@ body {
 /* Header/Profile Section */
 .header-container {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 60px auto 40px; /* Updated spacing */
   padding: 0 20px;
   display: flex;
   justify-content: center;
@@ -29,14 +29,19 @@ body {
 }
 
 .profile-photo-container {
-  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .profile-photo-container img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 3px solid #4a4a4a;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .profile-content {
@@ -107,18 +112,18 @@ body {
 
 /* Tech Stack Section */
 .tech-stack-container {
-  max-width: 700px; /* Reduced from 800px */
-  margin: 30px auto; /* Reduced top/bottom margin */
+  max-width: 700px;
+  margin: 60px auto; /* Updated spacing */
   padding: 0 20px;
   text-align: center;
 }
 
 .tech-stack-container h5,
 .projects-container h5 {
-  font-size: 22px; /* Reduced from 24px */
+  font-size: 22px;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 20px; /* Reduced from 30px */
+  margin-bottom: 20px;
 }
 
 .tech-stack-grid {
@@ -135,7 +140,6 @@ body {
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
-  /* Add minimum width to maintain consistent sizing */
   min-width: 80px;
   margin: 5px;
 }
@@ -145,41 +149,44 @@ body {
 }
 
 .tech-icon {
-  width: 50px; /* Reduced from 60px */
-  height: 50px; /* Reduced from 60px */
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px; /* Reduced from 8px */
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 10px; /* Reduced from 12px */
-  padding: 10px; /* Reduced from 12px */
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .tech-item:hover .tech-icon {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-5px);
 }
 
 .tech-icon img {
-  width: 25px; /* Reduced from 30px */
-  height: 25px; /* Reduced from 30px */
+  width: 30px;
+  height: 30px;
   object-fit: contain;
+  filter: brightness(1.1);
 }
 
 .tech-item p {
-  font-size: 12px; /* Reduced from 13px */
+  font-size: 12px;
   color: #ffffff;
   margin: 0;
   font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* HR Line */
 .hr-container {
   max-width: 1200px;
-  margin: 30px auto; /* Reduced from 40px */
+  margin: 30px auto;
   padding: 0 20px;
 }
 
@@ -192,7 +199,7 @@ body {
 /* Projects Section */
 .projects-container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 60px auto; /* Updated spacing */
   padding: 0 15px;
 }
 
@@ -367,9 +374,18 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .profile-photo-container img {
-    width: 120px;
-    height: 120px;
+  .profile-photo-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .header-container {
+    margin: 40px auto 30px;
+  }
+
+  .tech-stack-container,
+  .projects-container {
+    margin: 40px auto;
   }
 
   .profile-details h3 {
@@ -384,7 +400,7 @@ body {
     grid-template-columns: repeat(2, auto);
     max-width: 250px;
   }
-  
+
   .tech-item {
     min-width: 70px;
     margin: 4px;

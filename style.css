@@ -14,57 +14,73 @@ body {
 /* Header/Profile Section */
 .header-container {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 40px auto;
   padding: 0 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.profile-photo-container {
+  flex-shrink: 0;
 }
 
 .profile-photo-container img {
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  margin-bottom: 24px;
-  border: 4px solid #4a4a4a;
+  border: 3px solid #4a4a4a;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-details {
+  margin-bottom: 16px;
+  text-align: center;
 }
 
 .profile-details h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #ffffff;
 }
 
 .profile-details p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #a0a0a0;
   letter-spacing: 0.5px;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 /* Social Media Links */
 .social-media {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 8px;
   justify-content: center;
-  margin-bottom: 60px;
+  margin: 0;
+  max-width: 300px;
 }
 
 .social-media-item {
   display: flex;
   align-items: center;
-  padding: 8px 16px;
+  padding: 5px 10px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -77,13 +93,13 @@ body {
 }
 
 .social-media-item img {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
 }
 
 .social-media-item p {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #ffffff;
   margin: 0;
@@ -91,25 +107,26 @@ body {
 
 /* Tech Stack Section */
 .tech-stack-container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 700px; /* Reduced from 800px */
+  margin: 30px auto; /* Reduced top/bottom margin */
   padding: 0 20px;
   text-align: center;
 }
 
 .tech-stack-container h5,
 .projects-container h5 {
-  font-size: 24px;
+  font-size: 22px; /* Reduced from 24px */
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduced from 30px */
 }
 
 .tech-stack-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -118,6 +135,9 @@ body {
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
+  /* Add minimum width to maintain consistent sizing */
+  min-width: 80px;
+  margin: 5px;
 }
 
 .tech-item:hover {
@@ -125,15 +145,15 @@ body {
 }
 
 .tech-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px; /* Reduced from 60px */
+  height: 50px; /* Reduced from 60px */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* Reduced from 8px */
   background: rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 10px; /* Reduced from 12px */
+  padding: 10px; /* Reduced from 12px */
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease;
 }
@@ -144,13 +164,13 @@ body {
 }
 
 .tech-icon img {
-  width: 30px;
-  height: 30px;
+  width: 25px; /* Reduced from 30px */
+  height: 25px; /* Reduced from 30px */
   object-fit: contain;
 }
 
 .tech-item p {
-  font-size: 13px;
+  font-size: 12px; /* Reduced from 13px */
   color: #ffffff;
   margin: 0;
   font-weight: 500;
@@ -159,7 +179,7 @@ body {
 /* HR Line */
 .hr-container {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 30px auto; /* Reduced from 40px */
   padding: 0 20px;
 }
 
@@ -347,6 +367,29 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .profile-photo-container img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-details h3 {
+    font-size: 24px;
+  }
+
+  .profile-details p {
+    font-size: 13px;
+  }
+
+  .social-media {
+    grid-template-columns: repeat(2, auto);
+    max-width: 250px;
+  }
+  
+  .tech-item {
+    min-width: 70px;
+    margin: 4px;
+  }
+
   .project-container {
     min-height: auto;
     padding: 1rem;
@@ -372,9 +415,11 @@ body {
   .tech-tag {
     font-size: 0.65rem;
   }
-  
-  .tech-stack-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+}
+
+@media (max-width: 350px) {
+  .social-media {
+    grid-template-columns: repeat(1, auto);
+    max-width: 200px;
   }
 }

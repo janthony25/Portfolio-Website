@@ -72,8 +72,98 @@ function switchTab(targetTab, tabButtons, tabPanes) {
     pane.classList.add('active');
 }
 
+// Modal functionality
+function loadModals() {
+    // Create modal container if it doesn't exist
+    let modalContainer = document.getElementById('modal-container');
+    if (!modalContainer) {
+        modalContainer = document.createElement('div');
+        modalContainer.id = 'modal-container';
+        document.body.appendChild(modalContainer);
+    }
+
+    // Load modals from modals.html
+    fetch('modals.html')
+        .then(response => response.text())
+        .then(html => {
+            modalContainer.innerHTML = html;
+            initializeModals();
+            // Initialize galleries inside modals after loading
+            initializeGalleries();
+        })
+        .catch(error => console.error('Error loading modals:', error));
+}
+
+function initializeModals() {
+    const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    const modals = document.querySelectorAll('.modal');
+
+    viewDetailsButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.dataset.modal;
+            openModal(modalId);
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.closest('.modal').id;
+            closeModal(modalId);
+        });
+    });
+
+    modals.forEach(modal => {
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal(modal.id);
+            }
+        });
+    });
+
+    // Initialize modal gallery functionality
+    const modalGalleries = document.querySelectorAll('.modal .gallery-container');
+    modalGalleries.forEach(gallery => {
+        let isAnimating = false;
+        gallery.addEventListener('click', () => {
+            if (isAnimating) return;
+            handleGalleryClick(gallery, () => isAnimating = false);
+            isAnimating = true;
+        });
+    });
+}
+
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Add escape key listener for modals
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (window.getComputedStyle(modal).display === 'block') {
+                closeModal(modal.id);
+            }
+        });
+    }
+});
+
 // Initialize everything when document is ready
 document.addEventListener('DOMContentLoaded', () => {
     initializeGalleries();
     initializeTabs();
+    loadModals();
 });

@@ -260,6 +260,55 @@ body {
   font-size: 0.95rem;
 }
 
+
+/* ABOUT Section */
+
+.about-content {
+  padding: 2rem;
+}
+
+.about-content h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.section p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.bordered {
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section li {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: #e0e0e0;
+}
+
+
+
 /* Projects Section */
 .project-container {
   background-color: transparent;
@@ -435,6 +484,11 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .about-content {
+        padding: 1.5rem;
+    }
+  
   .profile-photo-container {
     width: 140px;
     height: 140px;
@@ -526,6 +580,8 @@ body {
     max-width: 200px;
   }
 
+
+
   .tab-buttons {
     gap: 10px;
   }
@@ -547,4 +603,121 @@ body {
   .photo-card {
     max-width: 240px;
   }
+<<<<<<< Updated upstream
+=======
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+
+  .tech-stack h3 {
+    font-size: 0.9rem;
+  }
+
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .likes-container {
+    padding: 4px 10px;
+  }
+
+  .likes-container img {
+    height: 16px;
+    width: 16px;
+  }
+
+  .likes-container span {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .tech-stack-container h5,
+  .projects-container h5 {
+    font-size: 18px;
+  }
+}
+
+
+/* MODAL SECTION */
+.view-details-btn {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.view-details-btn:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #a0a0a0;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #ffffff;
+}
+
+/* Scrollbar styling for the modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+>>>>>>> Stashed changes
 }

@@ -108,6 +108,12 @@
     .project-description p {
         font-size: 0.85rem;
     }
+
+    .submit-button {
+        width: 100%;
+        max-width: none;
+    }
+    
 }
 
 /* Extra small devices */

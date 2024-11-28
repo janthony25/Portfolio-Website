@@ -23,11 +23,19 @@ function initializeFloatingContact() {
         document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Improved scroll detection
+    // Function to check if main contact button is visible
+    const isMainButtonHidden = () => {
+        const computedStyle = window.getComputedStyle(mainContactButton);
+        return computedStyle.display === 'none';
+    };
+
+    // Improved scroll detection with contact section awareness
     const handleScroll = () => {
         const headerRect = headerContainer.getBoundingClientRect();
-        // Only show floating button when header is completely out of view
-        const shouldShow = headerRect.bottom < 0;
+        const isContactTabActive = document.getElementById('contact').classList.contains('active');
+        
+        // Show floating button when header is out of view OR main button is hidden (after tab change)
+        const shouldShow = !isContactTabActive && (headerRect.bottom < 0 || isMainButtonHidden());
         
         floatingButton.style.opacity = shouldShow ? '1' : '0';
         floatingButton.style.visibility = shouldShow ? 'visible' : 'hidden';
@@ -47,9 +55,14 @@ function initializeFloatingContact() {
 
     // Initial check
     handleScroll();
+    
+    // Add tab change listener to trigger visibility check
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            setTimeout(handleScroll, 0); // Run after tab change is complete
+        });
+    });
 }
-
-
 // ==========================================================================
 // Contact Button Functionality
 // ==========================================================================

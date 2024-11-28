@@ -1,4 +1,72 @@
 // ==========================================================================
+// Floating Contact Button Functionality
+// ==========================================================================
+function initializeFloatingContact() {
+    // Create and append floating button HTML
+    const floatingButton = document.createElement('div');
+    floatingButton.className = 'floating-contact-button';
+    floatingButton.innerHTML = `
+        <img src="/photos/send.png" alt="Contact">
+        <span>Contact me</span>
+    `;
+    document.body.appendChild(floatingButton);
+
+    // Get references to elements
+    const mainContactButton = document.querySelector('.contact-button');
+    const contactTabButton = document.querySelector('[data-tab="contact"]');
+    const headerContainer = document.querySelector('.header-container');
+
+    // Add click handler to floating button
+    floatingButton.addEventListener('click', () => {
+        contactTabButton.style.display = 'block';
+        contactTabButton.click();
+        document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Improved scroll detection
+    const handleScroll = () => {
+        const headerRect = headerContainer.getBoundingClientRect();
+        // Only show floating button when header is completely out of view
+        const shouldShow = headerRect.bottom < 0;
+        
+        floatingButton.style.opacity = shouldShow ? '1' : '0';
+        floatingButton.style.visibility = shouldShow ? 'visible' : 'hidden';
+    };
+
+    // Attach scroll listener with throttling for performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial check
+    handleScroll();
+}
+
+
+// ==========================================================================
+// Contact Button Functionality
+// ==========================================================================
+function initializeContactButton() {
+    const contactButton = document.querySelector('.contact-button');
+    const contactTabButton = document.querySelector('[data-tab="contact"]');
+    
+    if (contactButton) {
+        contactButton.addEventListener('click', () => {
+            contactTabButton.style.display = 'block'; // Show the contact tab button
+            contactTabButton.click();
+            document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+}
+
+// ==========================================================================
 // Gallery Functionality
 // ==========================================================================
 function initializeGalleries() {
@@ -72,16 +140,22 @@ function switchTab(targetTab, tabButtons, tabPanes) {
     const button = document.querySelector(`[data-tab="${targetTab}"]`);
     const pane = document.getElementById(targetTab);
     
+    // Hide contact tab button if switching to a different tab
+    const contactTabButton = document.querySelector('[data-tab="contact"]');
+    if (targetTab !== 'contact') {
+        contactTabButton.style.display = 'none';
+    }
+    
     button.classList.add('active');
     pane.classList.add('active');
 }
 
-
 // ==========================================================================
 // Initialization
 // ==========================================================================
-// Initialize everything when document is ready
 document.addEventListener('DOMContentLoaded', () => {
     initializeGalleries();
     initializeTabs();
+    initializeContactButton(); 
+    initializeFloatingContact();
 });

@@ -335,6 +335,33 @@ body {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Special styling for .NET Core icon */
+.tech-icon img[alt=".Net Core"] {
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Special styling for Bootstrap icon */
+.tech-icon img[alt="Bootstrap"] {
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Special styling for MSSQL icon
+.tech-icon img[alt="MSSQL"] {
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+} */
+
 /* ==========================================================================
    Tabs Section
    ========================================================================== */

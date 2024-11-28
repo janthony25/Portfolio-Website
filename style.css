@@ -14,76 +14,6 @@ body {
 }
 
 /* ==========================================================================
-   Modal Styles - Primary user interaction component
-   ========================================================================== */
-   .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-content {
-    position: relative;
-    background: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    width: 95%;
-    max-width: 1200px;
-    padding: 30px;
-    max-height: 85vh;
-    overflow-y: auto;
-}
-
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: #a0a0a0;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1010;
-}
-
-/* Modal Layout */
-.modal .container-fluid {
-    padding: 0;
-}
-
-.modal .row {
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.modal .col-lg-6 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Gallery in Modal */
-.modal .gallery-container {
-    position: relative;
-    width: 100%;
-    max-width: 450px;
-    height: 280px;
-    margin: 0;
-}
-
-/* ==========================================================================
    Header/Profile Section
    ========================================================================== */
 .header-container {
@@ -196,8 +126,7 @@ body {
     text-align: center;
 }
 
-.tech-stack-container h5,
-.projects-container h5 {
+.tech-stack-container h5 {
     font-size: 22px;
     font-weight: 600;
     color: #ffffff;
@@ -317,6 +246,13 @@ body {
 /* ==========================================================================
    Content Container Styles
    ========================================================================== */
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-15deg); }
+}
 .content-container {
     background-color: rgba(255, 255, 255, 0.08);
     border-radius: 16px;
@@ -328,6 +264,17 @@ body {
 .about-content {
     padding: 2rem;
     color: #e0e0e0;
+}
+
+.handwave {
+    display: inline-block; /* Ensures the emoji can animate */
+    font-size: 19px; /* Adjust size as needed */
+    transform-origin: bottom center; /* Set the pivot point for rotation */
+    transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+.handwave:hover {
+    animation: wave 0.8s ease-in-out forwards; /* Infinite waving effect */
 }
 
 .about-content h2 {
@@ -559,230 +506,4 @@ body {
     margin-left: 8px;
     font-size: 16px;
     color: #ffffff;
-}
-
-/* View Details Button */
-.view-details-btn {
-    background: transparent;
-    border: none;
-    color: #a0a0a0;
-    font-size: 14px;
-    margin-top: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.view-details-btn:hover {
-    color: #ffffff;
-    transform: translateX(4px);
-}
-
-/* ==========================================================================
-   Responsive Design
-   ========================================================================== */
-/* Medium devices (tablets) */
-@media (max-width: 991px) {
-    .project-container {
-        padding: 30px;
-    }
-
-    .project-container .gallery-container {
-        margin: 40px auto;
-    }
-
-    .project-details {
-        margin-top: 30px;
-    }
-
-    .project-container:last-child {
-        margin-bottom: 30px;
-    }
-}
-
-/* Smaller devices (mobile) */
-@media (max-width: 768px) {
-    .profile-photo-container {
-        width: 140px;
-        height: 140px;
-    }
-
-    .header-container {
-        margin: 40px auto 30px;
-    }
-
-    .tech-stack-container,
-    .tabs-container {
-        margin: 40px auto;
-    }
-
-    .profile-details h3 {
-        font-size: 24px;
-    }
-
-    .profile-details p {
-        font-size: 13px;
-    }
-
-    .social-media {
-        grid-template-columns: repeat(2, auto);
-        max-width: 250px;
-    }
-
-    .tech-item {
-        min-width: 70px;
-        margin: 4px;
-    }
-
-    .project-container {
-        padding: 20px;
-    }
-
-    .project-container .row {
-        flex-direction: column !important;
-    }
-
-    .project-container .col-lg-6 {
-        width: 100%;
-    }
-
-    .project-container .gallery-container {
-        order: -1 !important;
-        margin: 30px auto;
-        width: 100%;
-        max-width: 280px;
-        height: 175px;
-    }
-
-    /* Reset desktop ordering on mobile */
-    .project-container .col-lg-6.order-lg-1,
-    .project-container .col-lg-6.order-lg-2 {
-        order: unset !important;
-    }
-
-    .project-details {
-        padding: 0 15px;
-        text-align: left;
-        margin-top: 20px;
-    }
-
-    .tab-button {
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-
-    .about-content {
-        padding: 1.5rem;
-    }
-
-    .about-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-content p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 350px) {
-    .social-media {
-        grid-template-columns: repeat(1, auto);
-        max-width: 200px;
-    }
-
-    .tab-buttons {
-        gap: 10px;
-    }
-
-    .tab-button {
-        padding: 6px 15px;
-        font-size: 13px;
-    }
-
-    .project-container {
-        padding: 15px;
-    }
-
-    .gallery-container {
-        max-width: 240px;
-        height: 150px;
-    }
-
-    .photo-card {
-        max-width: 240px;
-    }
-
-    .project-title {
-        font-size: 1.2rem;
-    }
-
-    .project-description {
-        font-size: 0.85rem;
-    }
-
-    .tech-stack h3 {
-        font-size: 0.9rem;
-    }
-
-    .tech-tag {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.5rem;
-    }
-
-    .likes-container {
-        padding: 4px 10px;
-    }
-
-    .likes-container img {
-        height: 16px;
-        width: 16px;
-    }
-
-    .likes-container span {
-        font-size: 14px;
-        margin-left: 6px;
-    }
-
-    .tech-stack-container h5,
-    .projects-container h5 {
-        font-size: 18px;
-    }
-}
-
-/* About Content Responsive Adjustments */
-@media (max-width: 768px) {
-    .about-content {
-        padding: 1.5rem;
-    }
-}
-
-/* Modal Responsive Adjustments */
-@media (max-width: 991px) {
-    .modal-content {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .modal .gallery-container {
-        margin: 20px auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .modal-content {
-        padding: 15px;
-        width: 98%;
-    }
-
-    .project-summary p,
-    .project-description p {
-        font-size: 0.85rem;
-    }
-
-    .modal .features-list li {
-        font-size: 0.85rem;
-    }
 }

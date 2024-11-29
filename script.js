@@ -1,4 +1,44 @@
 // ==========================================================================
+// Contact Button Hover Functionality
+// ==========================================================================
+function initializeContactButtonHover() {
+    const contactButton = document.querySelector('.contact-button');
+    const contactHoverContent = document.querySelector('.contact-hover-content');
+    const profilePhotoContainer = document.querySelector('.profile-photo-container');
+
+    if (contactButton && contactHoverContent) {
+        contactButton.addEventListener('mouseenter', () => {
+            // Original hover content functionality
+            contactHoverContent.style.opacity = '1';
+            contactHoverContent.style.visibility = 'visible';
+            
+            // Add profile photo animation with transition
+            if (profilePhotoContainer) {
+                // First set the transition
+                profilePhotoContainer.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                // Then apply the transform and box-shadow
+                profilePhotoContainer.style.transform = 'scale(1.05)';
+                profilePhotoContainer.style.boxShadow = '0 0 25px rgba(255, 255, 255, 0.15)';
+            }
+        });
+
+        contactButton.addEventListener('mouseleave', () => {
+            // Original hover content functionality
+            contactHoverContent.style.opacity = '0';
+            contactHoverContent.style.visibility = 'hidden';
+            
+            // Remove profile photo animation while keeping transition
+            if (profilePhotoContainer) {
+                // Keep the transition for smooth return animation
+                profilePhotoContainer.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                profilePhotoContainer.style.transform = '';
+                profilePhotoContainer.style.boxShadow = '';
+            }
+        });
+    }
+}
+
+// ==========================================================================
 // Floating Contact Button Functionality
 // ==========================================================================
 function initializeFloatingContact() {
@@ -171,4 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeTabs();
     initializeContactButton(); 
     initializeFloatingContact();
+    initializeContactButtonHover(); 
+
 });

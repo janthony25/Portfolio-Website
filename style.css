@@ -156,7 +156,7 @@ body {
 .social-media-item {
     display: flex;
     align-items: center;
-    padding: 5px 10px;
+    padding: 7px 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     cursor: pointer;
@@ -762,6 +762,48 @@ body {
     margin-left: 8px;
     font-size: 16px;
     color: #ffffff;
+}
+
+.project-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+    width: 100%; 
+}
+
+.project-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: linear-gradient(120deg, rgba(138, 180, 255, 0.2), rgba(162, 191, 255, 0.2));
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(138, 180, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.project-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(120deg, rgba(138, 180, 255, 0.3), rgba(162, 191, 255, 0.3));
+    box-shadow: 0 0 25px rgba(138, 180, 255, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    filter: brightness(1.2);
+    position: relative;
+    z-index: 1;
 }
 
 /* ==========================================================================

@@ -699,6 +699,18 @@ body {
     text-align: left;
 }
 
+.project-description span {
+    background: rgba(138, 180, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #8ab4ff;
+    font-size: 0.9em;
+    border: 1px solid rgba(138, 180, 255, 0.2);
+    backdrop-filter: blur(4px);
+    display: inline-block; 
+    margin-top: 10px;      
+}
 .tech-stack {
     margin-top: 1rem;
     text-align: left;

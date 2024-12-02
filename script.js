@@ -54,7 +54,6 @@ function initializeFloatingContact() {
     // Get references to elements
     const mainContactButton = document.querySelector('.contact-button');
     const contactTabButton = document.querySelector('[data-tab="contact"]');
-    const headerContainer = document.querySelector('.header-container');
 
     // Add click handler to floating button
     floatingButton.addEventListener('click', () => {
@@ -63,19 +62,25 @@ function initializeFloatingContact() {
         document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Function to check if main contact button is visible
-    const isMainButtonHidden = () => {
-        const computedStyle = window.getComputedStyle(mainContactButton);
-        return computedStyle.display === 'none';
+    // Function to check if main button is half visible
+    const isMainButtonHalfVisible = () => {
+        if (!mainContactButton) return true;
+        
+        const buttonRect = mainContactButton.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate how much of the button is visible in the viewport
+        const visibleHeight = Math.min(buttonRect.bottom, windowHeight) - Math.max(buttonRect.top, 0);
+        const buttonHeight = buttonRect.height;
+        
+        // If less than 50% of the button is visible, return true
+        return visibleHeight < (buttonHeight / 2);
     };
 
     // Improved scroll detection with contact section awareness
     const handleScroll = () => {
-        const headerRect = headerContainer.getBoundingClientRect();
         const isContactTabActive = document.getElementById('contact').classList.contains('active');
-        
-        // Show floating button when header is out of view OR main button is hidden (after tab change)
-        const shouldShow = !isContactTabActive && (headerRect.bottom < 0 || isMainButtonHidden());
+        const shouldShow = !isContactTabActive && isMainButtonHalfVisible();
         
         floatingButton.style.opacity = shouldShow ? '1' : '0';
         floatingButton.style.visibility = shouldShow ? 'visible' : 'hidden';
@@ -99,10 +104,13 @@ function initializeFloatingContact() {
     // Add tab change listener to trigger visibility check
     document.querySelectorAll('.tab-button').forEach(button => {
         button.addEventListener('click', () => {
-            setTimeout(handleScroll, 0); // Run after tab change is complete
+            setTimeout(handleScroll, 0);
         });
     });
 }
+
+
+
 // ==========================================================================
 // Contact Button Functionality
 // ==========================================================================

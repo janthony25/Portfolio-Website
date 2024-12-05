@@ -699,11 +699,12 @@ body {
     text-align: left;
 }
 
-.project-description span {
+.in-production {
     background: rgba(138, 180, 255, 0.1);
     padding: 3px 8px;
     border-radius: 4px;
     font-weight: 500;
+    font-size: 13px !important;
     color: #8ab4ff;
     font-size: 0.9em;
     border: 1px solid rgba(138, 180, 255, 0.2);
@@ -718,6 +719,7 @@ body {
 
 .tech-stack h3 {
     font-size: 1rem;
+    margin-top: 25px;
     margin-bottom: 0.6rem;
     color: #ffffff;
     text-align: left;
@@ -810,8 +812,8 @@ body {
 }
 
 .project-button img {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     margin-right: 8px;
     filter: brightness(1.2);
     position: relative;

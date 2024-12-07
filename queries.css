@@ -20,16 +20,16 @@
         margin-bottom: 30px;
     }
 
-    .project-row > div {
-        margin-bottom: 2rem;
-    }
-    
-    .single-photo-container {
-        width: 280px;
-        height: 175px;
+    .project-title-small {
+        font-size: 1.4rem !important;
     }
 
-   
+   .project-info {
+        max-width: 500px;
+        margin: 0 auto;
+   }
+
+
 }
 
 /* Smaller devices (mobile) */
@@ -124,6 +124,42 @@
         width: 100%;
         max-width: none;
     }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-content {
+        padding: 1.5rem;
+    }
+
+    .contact-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+    .floating-contact-button {
+        display: none;
+    }
+
+    .single-photo-container {
+        width: 100%;
+        max-width: 280px;
+        height: 175px;
+    }
+    
+    .project-section-title {
+        margin: 2rem 0 1.5rem !important;
+    }
+    
+    .project-section-title h2 {
+        font-size: 1.3rem !important;
+    }
+    
     
 }
 

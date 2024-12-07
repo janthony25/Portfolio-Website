@@ -19,6 +19,17 @@
     .project-container:last-child {
         margin-bottom: 30px;
     }
+
+    .project-row > div {
+        margin-bottom: 2rem;
+    }
+    
+    .single-photo-container {
+        width: 280px;
+        height: 175px;
+    }
+
+   
 }
 
 /* Smaller devices (mobile) */

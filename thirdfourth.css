@@ -6,6 +6,7 @@
     width: 320px;
     height: 200px;
     margin: 0 auto;
+    margin-bottom: 20px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -28,8 +29,8 @@
 .project-title-small {
     font-size: 18px;
     font-weight: bold;
-    text-align: center;
-    margin: 1rem 0;
+    text-align: left;
+    margin: 0 0 1rem 0;
     color: #ffffff;
 }
 

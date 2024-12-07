@@ -162,6 +162,11 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .social-media-item:hover {
@@ -176,7 +181,7 @@ body {
     margin-right: 5px;
 }
 
-.social-media-item p {
+.social-media-item p{
     font-size: 12px;
     font-weight: 500;
     color: #ffffff;

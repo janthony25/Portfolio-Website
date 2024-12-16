@@ -1,4 +1,45 @@
 // ==========================================================================
+// Mobile Nav Bar Functionality
+// ==========================================================================
+
+function initializeMobileNav() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navContent = document.querySelector('.nav-content');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const tabButtons = document.querySelectorAll('.tab-button');
+
+    if (hamburgerMenu && navContent) {
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+            navContent.classList.toggle('active');
+        });
+
+        // Handle navigation link clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get the target section from the href
+                const targetSection = link.getAttribute('href').slice(1);
+                
+                // Find and click the corresponding tab button
+                const targetButton = document.querySelector(`[data-tab="${targetSection}"]`);
+                if (targetButton) {
+                    targetButton.click();
+                }
+
+                // Close the mobile menu
+                hamburgerMenu.classList.remove('active');
+                navContent.classList.remove('active');
+
+                // Smooth scroll to the section
+                document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    }
+}
+
+// ==========================================================================
 // Contact Button Hover Functionality
 // ==========================================================================
 function initializeContactButtonHover() {
@@ -220,5 +261,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeContactButton(); 
     initializeFloatingContact();
     initializeContactButtonHover(); 
-
+    initializeMobileNav();
 });

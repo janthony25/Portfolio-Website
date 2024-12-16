@@ -13,6 +13,9 @@ body {
     color: #e0e0e0;
 }
 
+.mobile-nav {
+    display: none; /* Hidden by default */
+}
 /* ==========================================================================
    Header/Profile Section
    ========================================================================== */
@@ -535,7 +538,7 @@ body {
 }
 
 .handwave:hover {
-    animation: wave 0.8s ease-in-out forwards; /* Infinite waving effect */
+    animation: wave 0.8s ease-in-out forwards; /* Waving effect */
 }
 
 .about-content h2 {
@@ -868,7 +871,14 @@ body {
     padding: 0 1.25rem;
 }
 
-.project-section-title h2 {
+.project-section-title2 {
+    text-align: left;
+    margin: 3rem 0 4rem;
+    padding: 0 1.25rem;
+}
+
+.project-section-title h2,
+.project-section-title2 h2{
     font-size: 1.6rem;
     font-weight: 600;
     color: #ffffff;

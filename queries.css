@@ -236,9 +236,20 @@
         margin: 40px auto 30px;
     }
 
-    .tech-stack-container,
-    .tabs-container {
+    /* Tech Stack container */
+    .tech-stack-container {
+        max-width: 600px;
         margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .tech-stack-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        max-width: 450px;
+        margin: 0 auto;
     }
 
     .profile-details h3 {
@@ -255,8 +266,19 @@
     }
 
     .tech-item {
-        min-width: 70px;
-        margin: 4px;
+        min-width: 75px;
+        margin: 3px;
+    }
+
+    .tech-icon {
+        width: 48px;
+        height: 48px;
+        padding: 9px;
+    }
+
+    .tech-item p {
+        font-size: 11px;
+        margin-top: 4px;
     }
 
     .project-container {
@@ -356,6 +378,33 @@
     
 }
 
+@media (max-width: 396px) {
+    .tech-stack-grid {
+        gap: 8px; /* Reduce gap between tech items */
+        padding: 0 10px; /* Add some padding on the sides */
+    }
+
+    .tech-item {
+        min-width: 65px; /* Reduce minimum width */
+        margin: 2px; /* Reduce margin */
+    }
+
+    .tech-icon {
+        width: 45px; /* Slightly smaller icons */
+        height: 45px;
+        padding: 8px;
+    }
+
+    .tech-icon img {
+        width: 25px; /* Adjust icon size */
+        height: 25px;
+    }
+
+    .tech-item p {
+        font-size: 11px; /* Smaller font size */
+    }
+}
+
 /* Extra small devices */
 @media (max-width: 350px) {
     .social-media {
@@ -422,9 +471,3 @@
     }
 }
 
-/* About Content Responsive Adjustments */
-@media (max-width: 768px) {
-    .about-content {
-        padding: 1.5rem;
-    }
-}

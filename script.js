@@ -1,3 +1,76 @@
+function initializeMobileNav() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navContent = document.querySelector('.nav-content');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navContainer = document.querySelector('.nav-container');
+    const mainContactButton = document.querySelector('.contact-button');
+    
+    if (hamburgerMenu && navContent) {
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+            navContent.classList.toggle('active');
+        });
+
+        // Handle navigation link clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetSection = link.getAttribute('href').slice(1);
+                const targetButton = document.querySelector(`[data-tab="${targetSection}"]`);
+                if (targetButton) {
+                    targetButton.click();
+                }
+
+                hamburgerMenu.classList.remove('active');
+                navContent.classList.remove('active');
+                document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    }
+
+    // Function to check if main contact button is half visible
+    const isMainButtonHalfVisible = () => {
+        if (!mainContactButton) return false;
+        
+        const buttonRect = mainContactButton.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Calculate how much of the button is visible
+        const visibleHeight = Math.min(buttonRect.bottom, windowHeight) - Math.max(buttonRect.top, 0);
+        const buttonHeight = buttonRect.height;
+        
+        // Return true if less than 50% of button is visible
+        return visibleHeight < (buttonHeight / 2);
+    };
+
+    // Function to handle nav visibility
+    const handleNavVisibility = () => {
+        if (isMainButtonHalfVisible()) {
+            if (!navContainer.classList.contains('visible')) {
+                navContainer.classList.add('visible');
+            }
+        } else {
+            navContainer.classList.remove('visible');
+        }
+    };
+
+    // Add scroll listener with throttling
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleNavVisibility();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial check
+    handleNavVisibility();
+}
+
 // ==========================================================================
 // Contact Button Hover Functionality
 // ==========================================================================
@@ -220,5 +293,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeContactButton(); 
     initializeFloatingContact();
     initializeContactButtonHover(); 
-
+    initializeMobileNav();
 });

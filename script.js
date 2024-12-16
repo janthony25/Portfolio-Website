@@ -285,6 +285,76 @@ function switchTab(targetTab, tabButtons, tabPanes) {
 }
 
 // ==========================================================================
+// Email Functionality
+// ==========================================================================
+
+function initializeContactForm() {
+    const form = document.querySelector('.contact-form');
+    const formMessage = document.querySelector('.form-message');
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Show loading state
+            const submitButton = form.querySelector('.submit-button');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.innerHTML = `
+                <img src="/photos/send.png" alt="Send">
+                Sending...
+            `;
+            submitButton.disabled = true;
+
+            // Get form data
+            const templateParams = {
+                from_name: form.querySelector('#name').value,
+                from_email: form.querySelector('#email').value,
+                subject: form.querySelector('#subject').value,
+                message: form.querySelector('#message').value
+            };
+
+            // Send email using EmailJS
+            emailjs.send(
+                'service_s5sa3ip', 
+                'template_2l8hvoa', 
+                templateParams
+            )
+            .then(function(response) {
+                // Show success message
+                formMessage.style.display = 'block';
+                formMessage.className = 'form-message success';
+                formMessage.textContent = 'Message sent successfully!';
+                
+                // Reset form
+                form.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            })
+            .catch(function(error) {
+                // Show error message
+                formMessage.style.display = 'block';
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Failed to send message. Please try again.';
+                
+                // Hide error message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            })
+            .finally(function() {
+                // Reset button state
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            });
+        });
+    }
+}
+
+
+// ==========================================================================
 // Initialization
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -294,4 +364,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeFloatingContact();
     initializeContactButtonHover(); 
     initializeMobileNav();
+    initializeContactForm();
 });

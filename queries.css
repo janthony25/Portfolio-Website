@@ -236,10 +236,20 @@
         margin: 40px auto 30px;
     }
 
-    .tech-stack-container,
-    .tabs-container {
+    .tech-stack-container {
+        max-width: 600px;
         margin: 40px auto;
+        padding: 0 15px;
     }
+    .tech-stack-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
 
     .profile-details h3 {
         font-size: 24px;
@@ -255,8 +265,19 @@
     }
 
     .tech-item {
-        min-width: 70px;
-        margin: 4px;
+        min-width: 75px;
+        margin: 3px;
+    }
+
+    .tech-icon {
+        width: 48px;
+        height: 48px;
+        padding: 9px;
+    }
+
+    .tech-item p {
+        font-size: 11px;
+        margin-top: 4px;
     }
 
     .project-container {
@@ -419,12 +440,5 @@
     .tech-stack-container h5,
     .projects-container h5 {
         font-size: 18px;
-    }
-}
-
-/* About Content Responsive Adjustments */
-@media (max-width: 768px) {
-    .about-content {
-        padding: 1.5rem;
     }
 }

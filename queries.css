@@ -50,27 +50,27 @@
 
 @keyframes slideDown {
     0% {
-        transform: translateY(-100%);
+        transform: translate3d(0, -100%, 0);
         opacity: 0;
     }
     100% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
     }
 }
 
 .nav-container {
     padding: 0.8rem 1rem;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background: rgba(18, 18, 18, 0.95); /* Solid color fallback */
     position: fixed;
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    transform: translateY(-100%); /* Start hidden */
+    transform: translate3d(0, -100%, 0); /* Use translate3d for hardware acceleration */
     opacity: 0;
+    will-change: transform, opacity; /* Hint to browser about what will animate */
 }
+
 
 .nav-container.visible {
     animation: slideDown 0.3s ease forwards;
@@ -186,6 +186,21 @@
     width: 20px;
     height: 20px;
     filter: brightness(1);
+}
+
+.hover-content,
+.contact-hover-content {
+    display: none !important;
+}
+
+
+.profile-photo-container:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.profile-photo-container:hover > img {
+    opacity: 1 !important;
 }
 
 /* Close button styling */
